@@ -1,0 +1,34 @@
+{
+  "name": "academic-teacher-evaluation-system",
+  "version": "5.1.0",
+  "type": "module",
+  "description": "Professional Teacher Evaluation System with 100-point assessment, Word generation, and bilingual support - Direct MongoDB connection",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static build complete'",
+    "start": "vercel dev",
+    "test:mongodb": "node test-mongodb.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.2.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medch24/Visite-Coordinateur.git"
+  },
+  "keywords": [
+    "teacher-evaluation",
+    "education",
+    "assessment",
+    "vercel",
+    "javascript",
+    "bilingual"
+  ],
+  "author": "Academic Excellence Institute",
+  "license": "MIT"
+}

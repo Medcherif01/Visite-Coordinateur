@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "academic-teacher-evaluation-system",
+  "builds": [
+    { "src": "api/index.cjs", "use": "@vercel/node" },
+    { "src": "public/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "^/api/(.*)", "dest": "/api/index.cjs" },
+    { "src": "^/$", "dest": "/public/index.html" },
+    { "src": "^/(.*)", "dest": "/public/$1" }
+  ]
+}

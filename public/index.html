@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-en="Teacher Evaluation System" data-lang-fr="Système d'Évaluation des Enseignants" data-lang-ar="نظام تقييم المعلمين">Système d'Évaluation des Enseignants</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Intégration de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Police arabe Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <header class="header-controls">
+        <div class="school-logo">
+            <img src="https://lh3.googleusercontent.com/d/1lQ3Babrs3Wgv4rakVmkK0oCWcM0cTKPK" alt="École Internationale Alkawthar">
+        </div>
+        <div class="lang-switcher">
+            <button id="lang-en" class="lang-btn">EN</button>
+            <button id="lang-fr" class="lang-btn active">FR</button>
+            <button id="lang-ar" class="lang-btn">عربي</button>
+        </div>
+    </header>
+
+    <!-- Page de Connexion -->
+    <main id="login-page" class="page active">
+        <div class="card">
+            <h1 data-lang-en="Login" data-lang-fr="Connexion" data-lang-ar="تسجيل الدخول">Connexion</h1>
+            <form id="login-form">
+                <input type="text" id="username" placeholder-fr="Nom d'utilisateur" placeholder-en="Username" placeholder-ar="اسم المستخدم" required>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder-fr="Mot de passe" placeholder-en="Password" placeholder-ar="كلمة السر" required>
+                    <button type="button" id="toggle-password" class="password-toggle"><i class="fas fa-eye"></i></button>
+                </div>
+                 <div class="checkbox-container">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me" data-lang-en="Remember me" data-lang-fr="Se souvenir de moi" data-lang-ar="تذكرني">Se souvenir de moi</label>
+                </div>
+                <button type="submit" data-lang-en="Login" data-lang-fr="Se connecter" data-lang-ar="دخول">Se connecter</button>
+                <p id="login-error" class="error-message"></p>
+            </form>
+            <div class="login-help">
+                <p data-lang-en="Contact support for assistance." data-lang-fr="Contactez le support pour obtenir de l'aide." data-lang-ar="اتصل بالدعم للحصول على المساعدة.">Contactez le support pour obtenir de l'aide.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tableau de Bord Coordinateur -->
+    <section id="coordinator-dashboard" class="page">
+        <h2 id="coordinator-welcome"></h2>
+        <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> <span data-lang-en="Logout" data-lang-fr="Déconnexion" data-lang-ar="تسجيل الخروج"></span></button>
+        <div class="card">
+            <h3 data-lang-en="Select a teacher to evaluate:" data-lang-fr="Sélectionnez un enseignant à évaluer :" data-lang-ar="اختر معلمًا للتقييم:"></h3>
+            <select id="teacher-select">
+                <option value="">---</option>
+            </select>
+        </div>
+        <div id="previous-evaluations-container"></div>
+        <div id="evaluation-form-container"></div>
+    </section>
+
+    <!-- Tableau de Bord Enseignant -->
+    <section id="teacher-dashboard" class="page">
+        <h2 id="teacher-welcome"></h2>
+        <button id="logout-btn-teacher"><i class="fas fa-sign-out-alt"></i> <span data-lang-en="Logout" data-lang-fr="Déconnexion" data-lang-ar="تسجيل الخروج"></span></button>
+        <div id="evaluation-reports"></div>
+    </section>
+
+    <!-- Modal pour les détails -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-lang-en="Evaluation Details" data-lang-fr="Détails de l'Évaluation" data-lang-ar="تفاصيل التقييم"></h3>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div id="modal-body-content" class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================= -->
+<!-- CHARGEMENT DES BIBLIOTHÈQUES POUR LE FICHIER WORD -->
+<!-- Ajout des scripts depuis CDN pour la fiabilité -->
+<script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<!-- ============================================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
